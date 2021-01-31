@@ -18,8 +18,7 @@ Both data files have to be in the same folder with *‘Routing.py’*.
 For analysis purposes let *M = number of delivery events*.
 1. Clearly the maximum number of deliveries is limited and defined by the capacity of the car *Q*.
 Sort all the deliveries by capacity in ascending order. Consider the first *N* deliveries whose total capacity is <= *Q*. Let the first *N* such delivery events that fit in the car define a set *S*. Very likely *N << M*.\
-This will guarantee that the primary objective function (maximize the number of deliveries) is fulfilled. Note, there can be many unique combinations / sets of delivery events such that their sum <= *Q* (such that they fit in the car). In this solution we are not searching for the optimal set of delivery events yielding the shortest route.
-
+This will guarantee that the primary objective function (maximize the number of deliveries) is fulfilled. Note, there can be many unique combinations / sets of delivery events such that their sum <= *Q* (such that they fit in the car). In this solution we are not searching for the optimal set of delivery events yielding the shortest route.\
 Complexity: *O(M log M)* due to sorting.
 
 2. Approximately solve the TSP for set *S* of delivery events to find the “reasonably short route”. Solving TSP exactly is not feasible. Therefore an approximate method has to be applied. The 2x accurate approach was chosen.
